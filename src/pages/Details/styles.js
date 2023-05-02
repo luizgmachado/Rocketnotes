@@ -14,10 +14,30 @@ export const Container = styled.div`
         grid-area: content;
         overflow-y: scroll;
         padding: 64px 0;
-    }
-        
-`;
+    }      
 
+    /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #FF9000 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #FF9000;
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  }
+`
 
 export const Links = styled.ul`
     list-style: none;
@@ -31,7 +51,7 @@ export const Links = styled.ul`
     }
     `
 
-    export const Content = styled.div`
+export const Content = styled.div`
         max-width: 550px;
         margin: 0 auto;
 
