@@ -14,7 +14,7 @@ export const Container = styled.div`
     "newnote content";
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-  ` 
+  `
 
 export const Brand = styled.div`
   grid-area: brand;
@@ -55,5 +55,18 @@ export const Search = styled.div`
 export const Content = styled.div`
   grid-area: content;`
 
-export const NewNote= styled.button`
-  grid-area: newnote;`
+export const NewNote = styled.button`
+  grid-area: newnote;
+
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+
+  background-color: ${({ theme }) => theme.COLORS.ORANGE};
+  `
