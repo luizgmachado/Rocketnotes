@@ -14,43 +14,37 @@ export const Container = styled.div`
     "newnote content";
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-`
+  ` 
+
 export const Brand = styled.div`
-    grid-area: brand;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-area: brand;
 
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-    
-    background-color: ${({ theme}) => theme.COLORS.BACKGROUND_900};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    > h1 {
-      font-size: 24px;
-      color: ${({ theme }) => theme.COLORS.ORANGE};
-    }
-`
-export const Menu = styled.ul`
-     grid-area: menu;
-     
-     
-     background-color: ${({ theme}) => theme.COLORS.BACKGROUND_900};
-   
-`
-export const Search = styled.div`
-    grid-area: search;
-    
+  border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
-`
-export const Content = styled.div`
-    grid-area: content;
-    
-`
-export const NewNote = styled.button`
-    grid-area: newnote;
+  > h1 {
+    font-size: 24px;
+    color: ${({ theme }) => theme.COLORS.ORANGE};
+  }
   
-
 `
+
+export const Menu = styled.ul`
+  grid-area: menu;
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  
+  `
+
+export const Search = styled.div`
+  grid-area: search;
+  `
+
+export const Content = styled.div`
+  grid-area: content;`
+
+export const NewNote= styled.button`
+  grid-area: newnote;`
