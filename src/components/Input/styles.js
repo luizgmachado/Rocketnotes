@@ -28,14 +28,8 @@ export const Container = styled.div`
 
     border-style: none;
   }
-
-   /* > input:focus {
-    border-style: none;
-    outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
-    border-radius: 10px;
-  }  */
-
-  textarea:focus, input:focus, select:focus {
+  
+ input:focus{
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
