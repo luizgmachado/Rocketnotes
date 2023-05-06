@@ -28,12 +28,12 @@ export const Container = styled.div`
 
     border-style: none;
   }
-  
- input:focus{
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-} 
+ 
+    input:focus {
+      outline: none;
+      
+    }
+   
 
   > svg {
       margin-left: 16px;
