@@ -24,6 +24,7 @@ export const Container = styled.div`
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
+      
     }
 
     border-style: none;
@@ -31,7 +32,8 @@ export const Container = styled.div`
  
     input:focus {
       outline: none;
-      
+      /* outline: solid 1px ${({ theme }) => theme.COLORS.ORANGE}; */
+      /* border-radius: 10px; */
     }
    
 
