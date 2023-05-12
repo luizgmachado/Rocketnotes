@@ -15,6 +15,8 @@ export const Container = styled.textarea`
   margin-bottom: 8px;
   border-radius: 10px;
 
+  
+
 
   &::placeholder {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -22,6 +24,7 @@ export const Container = styled.textarea`
     font-weight: 400;
     line-height: 22px;
     font-family: Roboto, sans-serif;
+    
   }
 
   /* ===== Scrollbar CSS ===== */

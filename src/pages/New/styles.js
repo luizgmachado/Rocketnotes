@@ -20,6 +20,7 @@ export const Container = styled.div`
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 13px;
+    
   }
 
   *::-webkit-scrollbar-track {
