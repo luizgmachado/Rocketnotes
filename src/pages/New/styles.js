@@ -9,6 +9,29 @@ export const Container = styled.div`
   grid-template-areas: 
     "header"
     "content";
+
+    /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #FF9000 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #FF9000;
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  }
 `
 
 export const Form = styled.form`
