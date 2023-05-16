@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
@@ -81,7 +82,7 @@ export const Content = styled.div`
   overflow-y: scroll;
   `
 
-export const NewNote = styled.button`
+export const NewNote = styled(Link)`
   grid-area: newnote;
 
   border: none;
@@ -95,4 +96,5 @@ export const NewNote = styled.button`
   line-height: 26px;
 
   background-color: ${({ theme }) => theme.COLORS.ORANGE};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   `
