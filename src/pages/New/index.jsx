@@ -31,11 +31,9 @@ export function New() {
 				<Section title="Marcadores">
 						<div className="tags">
 							<NoteItem value="ReactJS"/>
-							<NoteItem value="VueJS"/>
 							<NoteItem value="JavaScript"/>
 							<NoteItem value="NodeJS"/>
-							<NoteItem value="HTML"/>
-							<NoteItem isNew placeholder="Adicionar nova tag" />
+							<NoteItem isNew placeholder="Add Nova tag" />
 						</div>
 					</Section>
 
