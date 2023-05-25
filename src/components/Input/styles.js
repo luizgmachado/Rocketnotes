@@ -11,6 +11,10 @@ export const Container = styled.div`
   margin-bottom: 8px;
   border-radius: 10px;
 
+  &:has(input:focus-visible) {
+    outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
+  }
+
   > input {
     height: 56px;
     width: 100%;
@@ -22,22 +26,18 @@ export const Container = styled.div`
     border: 0;
     border-style: none;
 
+    
+
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
       font-family: Roboto, sans-serif;
       font-weight: 400;
       font-size: 16px;
-      line-height: 19px;
+      line-height: 19px; 
     }
 
     border-style: none;
   }
- 
-    input:focus {
-      outline: none;
-      /* outline: solid 1px ${({ theme }) => theme.COLORS.ORANGE}; */
-      /* border-radius: 10px; */
-    }
    
 
   > svg {
