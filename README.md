@@ -15,7 +15,8 @@
 </p>
 
 <h2 id="project">📁 Projeto</h2>
-Figma do projeto disponível no 🔗 ![Figma](https://www.figma.com/file/5zvhw9c3DnsEskg1UfotB3/RocketNotes-(Copy)?type=design&node-id=0-1&t=U6ScGbWJglk3oXdW-0)
+Figma do projeto disponível no 🔗 
+[Figma](https://www.figma.com/file/5zvhw9c3DnsEskg1UfotB3/RocketNotes-(Copy)?type=design&node-id=0-1&t=U6ScGbWJglk3oXdW-0)
 
 ![Capa](https://github.com/luizgmachado/Rocketnotes/assets/108701750/f5daff1a-ebba-4835-a3c0-f1fdee13ce45)
 
