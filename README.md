@@ -15,8 +15,9 @@
 </p>
 
 <h2 id="project">📁 Projeto</h2>
+Figma do projeto disponível no 🔗 [Figma](https://www.figma.com/file/5zvhw9c3DnsEskg1UfotB3/RocketNotes-(Copy)?type=design&node-id=0-1&t=U6ScGbWJglk3oXdW-0)
 
-![Home](https://github.com/luizgmachado/Rocketnotes/assets/108701750/2afd5c43-d030-419e-8952-52e4a02131e8)
+![Capa](https://github.com/luizgmachado/Rocketnotes/assets/108701750/f5daff1a-ebba-4835-a3c0-f1fdee13ce45)
 
 Frontend do projeto RocketNotes, sua aplicação para salvar e gerenciar links úteis!
 
@@ -24,6 +25,7 @@ Frontend do projeto RocketNotes, sua aplicação para salvar e gerenciar links �
 
 A aplicação conta com páginas de login, cadastro, visualizar nota, perfil e criar nota.
 
+![Home](https://github.com/luizgmachado/Rocketnotes/assets/108701750/2afd5c43-d030-419e-8952-52e4a02131e8)
 ![notas](https://github.com/luizgmachado/Rocketnotes/assets/108701750/26aa8367-f650-4f96-90b3-49e9e119a6fa)
 ![perfil](https://github.com/luizgmachado/Rocketnotes/assets/108701750/794bb647-d45b-491e-9fbe-281bc720a2de)
 ![login](https://github.com/luizgmachado/Rocketnotes/assets/108701750/46b95187-315f-48ab-9363-4d50df8588bd)
