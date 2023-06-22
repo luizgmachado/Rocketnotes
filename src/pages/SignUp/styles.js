@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   padding: 0 136px;
-  margin-bottom: 124px;
+  
 
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@ export const Form = styled.form`
     text-decoration: none;
     color: ${({ theme }) => theme.COLORS.ORANGE};
 
-    margin-top: 124px;
+    margin-top: 100px;
   }
 
   
