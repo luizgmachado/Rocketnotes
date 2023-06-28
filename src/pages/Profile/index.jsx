@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react"
 import {
 	FiArrowLeft,
@@ -22,6 +24,10 @@ export function Profile() {
 	const [passwordOld, setPasswordOld] = useState()
 	const [passwordNew, setPasswordNew] = useState()
 
+	const [avatar, setAvatar] = useState(user.avatar)
+  const [avatarFile, setAvatarFile] = useState(null)
+
+
 	async function handleUpdateProfile() {
 		const user = {
 			name,
@@ -29,8 +35,16 @@ export function Profile() {
 			password: passwordNew,
 			old_password: passwordOld,
 		}
-		await UpdateProfile({ user })
+		await UpdateProfile({ user, avatarFile })
 	}
+
+  function handleChangeAvatar(e) {
+    const file = e.target.files[0]
+    setAvatarFile(file)
+
+    const imagePreview = URL.createObjectURL(file)
+    setAvatar(imagePreview)
+  }
 
 	return (
 		<Container>
@@ -42,14 +56,15 @@ export function Profile() {
 
 			<Form>
 				<Avatar>
-					<img
-						src="https://github.com/luizgmachado.png"
-						alt="Foto do usuário"
-					/>
+					<img src={avatar} alt="Foto do usuário" />
 
 					<label htmlFor="avatar">
 						<FiCamera />
-						<input type="file" id="avatar" />
+						<input 
+              type="file" 
+              id="avatar" 
+              onChange={handleChangeAvatar} 
+            />
 					</label>
 				</Avatar>
 				<Input
