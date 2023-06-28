@@ -1,5 +1,3 @@
-/** @format */
-
 import { useState } from "react"
 import {
 	FiArrowLeft,
@@ -10,6 +8,8 @@ import {
 	FiCamera,
 } from "react-icons/fi"
 
+import { api } from "../../services/api"
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 import { useAuth } from "../../hooks/auth"
 import { Link } from "react-router-dom"
 import { Input } from "../../components/Input"
@@ -24,7 +24,8 @@ export function Profile() {
 	const [passwordOld, setPasswordOld] = useState()
 	const [passwordNew, setPasswordNew] = useState()
 
-	const [avatar, setAvatar] = useState(user.avatar)
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+	const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
 
 
@@ -56,15 +57,13 @@ export function Profile() {
 
 			<Form>
 				<Avatar>
-					<img src={avatar} alt="Foto do usuário" />
+					<img 
+            src={avatar} 
+            alt={user.name} />
 
 					<label htmlFor="avatar">
 						<FiCamera />
-						<input 
-              type="file" 
-              id="avatar" 
-              onChange={handleChangeAvatar} 
-            />
+						<input type="file" id="avatar" onChange={handleChangeAvatar} />
 					</label>
 				</Avatar>
 				<Input
