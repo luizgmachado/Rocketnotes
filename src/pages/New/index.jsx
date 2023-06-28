@@ -12,10 +12,24 @@ import { Container, Form } from "./styles";
 export function New() {
 	const [links, setLinks] = useState([]);
 	const [newLink, setNewLink] = useState("");
+
+	const [tags, setTags] = useState([])
+	const [newTags, setNewTags] = useState("")
 	
 	function handleAddLink() {
 		setLinks(prevState => [...prevState, newLink]);
 		setNewLink("");
+	}
+
+	function handleRemoveLink(index) {
+		const newLinks = [...links];
+		newLinks.splice(index, 1);
+		setLinks(newLinks);
+	}
+
+	function handleAddTag() {
+		setTags(prevState => [...prevState, newTags]);
+		setNewTags("");
 	}
 
   return (
@@ -33,11 +47,12 @@ export function New() {
 					<Textarea placeholder="Observação" />
 
 					<Section title="Links úteis">
-						{links.map((link) => (
+						{links.map((link, index) => (
 							<NoteItem
-								key={link}
+								key={String(index)}
 								value={link}
-								onClick={() => setLinks(links.filter((item) => item !== link))}
+								onClick={() => handleRemoveLink(index)}
+								//onClick={() => setLinks(links.filter((item) => item !== link))}
 							/>
 						))}
 
@@ -52,10 +67,11 @@ export function New() {
 
 					<Section title="Marcadores">
 						<div className="tags">
-							<NoteItem value="ReactJS" />
-							<NoteItem value="JavaScript" />
-							<NoteItem value="NodeJS" />
-							<NoteItem isNew placeholder="Add Nova tag" />
+							<NoteItem 
+								value="ReactJS" 
+								onClick={handleAddTag}
+							/>
+						
 						</div>
 					</Section>
 
