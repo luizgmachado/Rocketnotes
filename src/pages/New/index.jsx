@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Header } from "../../components/Header";
@@ -9,6 +10,14 @@ import { Button } from "../../components/Button";
 
 import { Container, Form } from "./styles";
 export function New() {
+	const [links, setLinks] = useState([]);
+	const [newLink, setNewLink] = useState("");
+	
+	function handleAddLink() {
+		setLinks(prevState => [...prevState, newLink]);
+		setNewLink("");
+	}
+
   return (
 		<Container>
 			<Header />
@@ -24,20 +33,33 @@ export function New() {
 					<Textarea placeholder="Observação" />
 
 					<Section title="Links úteis">
-						<NoteItem value="https://www.google.com"/>
-						<NoteItem isNew placeholder="Adicionar novo link" />
+						{links.map((link) => (
+							<NoteItem
+								key={link}
+								value={link}
+								onClick={() => setLinks(links.filter((item) => item !== link))}
+							/>
+						))}
+
+						<NoteItem
+							isNew
+							placeholder="Adicionar novo link"
+							value={newLink}
+							onChange={(e) => setNewLink(e.target.value)}
+							onClick={handleAddLink}
+						/>
 					</Section>
 
-				<Section title="Marcadores">
+					<Section title="Marcadores">
 						<div className="tags">
-							<NoteItem value="ReactJS"/>
-							<NoteItem value="JavaScript"/>
-							<NoteItem value="NodeJS"/>
+							<NoteItem value="ReactJS" />
+							<NoteItem value="JavaScript" />
+							<NoteItem value="NodeJS" />
 							<NoteItem isNew placeholder="Add Nova tag" />
 						</div>
 					</Section>
 
-					<Button title="Salvar"/>
+					<Button title="Salvar" />
 				</Form>
 			</main>
 		</Container>
