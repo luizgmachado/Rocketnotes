@@ -46,6 +46,17 @@ export function New() {
 	}
 
 	async function handleNewNote() {
+		if (!title) {
+			return alert("Preencha o Título da Nota")
+		}
+
+		if (newLink){
+			return alert("Exite um campo de link preenchido sem adicionar, deseja adicionar mais um link?")
+		}
+		
+		if (newTags){
+			return alert("Exite um campo de Tag preenchido sem adicionar, deseja adicionar mais um tag?")
+		}
 		await api.post("/notes", {
 			title,
 			description,
