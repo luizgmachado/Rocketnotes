@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
@@ -46,8 +46,8 @@ export function New() {
 	}
 
 	async function handleNewNote() {
-		if (!title) {
-			return alert("Preencha o Título da Nota")
+		if (!title || !newTags || !newLink) {
+			return alert("Preencha o todos os campos!")
 		}
 
 		if (newLink){
