@@ -46,7 +46,7 @@ export function New() {
 	}
 
 	async function handleNewNote() {
-		if (!title || !newTags || !newLink) {
+		if (!title || !tags || !links) {
 			return alert("Preencha o todos os campos!")
 		}
 
