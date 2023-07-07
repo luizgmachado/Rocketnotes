@@ -80,11 +80,11 @@ export function New() {
 
 					<Input
 						placeholder="Título"
-						onChange={(e) => setTitle(e.target.value)}
+						onChange={e => setTitle(e.target.value)}
 					/>
 					<Textarea
 						placeholder="Observação"
-						onChange={(e) => setDescription(e.target.value)}
+						onChange={e => setDescription(e.target.value)}
 					/>
 
 					<Section title="Links úteis">

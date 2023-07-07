@@ -17,13 +17,13 @@ export function Home() {
 	const [notes, setNotes] = useState([])
 	
 
-	function handleTagsSelected(tagName) {
-		const isAlreadySelected = tagsSelected.includes(tagName)
+	function handleTagSelected(tagName) {
 		if( tagName === "all" ) {
-			setTagsSelected([])
-			return
+			return setTagsSelected([])
+			
 		}
-
+		const isAlreadySelected = tagsSelected.includes(tagName)
+		
 		if (isAlreadySelected) {
 			const filteredTags = tagsSelected.filter((tag) => tag !== tagName)
 			setTagsSelected(filteredTags)
@@ -64,7 +64,7 @@ export function Home() {
 				<li>
 					<ButtonText
 						title="Todos"
-						onClick={() => handleTagsSelected("all")}
+						onClick={() => handleTagSelected("all")}
 						isActive={tagsSelected.length === 0}
 					/>
 				</li>
@@ -73,7 +73,7 @@ export function Home() {
 						<li key={String(tag.id)}>
 							<ButtonText
 								title={tag.name}
-								onClick={() => handleTagsSelected(tag.name)}
+								onClick={() => handleTagSelected(tag.name)}
 								isActive={tagsSelected.includes(tag.name)}
 							/>
 						</li>
@@ -90,14 +90,9 @@ export function Home() {
 
 			<Content>
 				<Section title="Minas Notas">
-					{
-						notes.map(note => (
-							<Note 
-								key={note.id}
-								data={note}
-							/>
-						))
-					}
+					{notes.map((note) => (
+						<Note key={note.id} data={note} />
+					))}
 				</Section>
 			</Content>
 
