@@ -5,6 +5,7 @@ import { Header } from '../../components/Header'
 import { Section } from '../../components/Section'
 import { Tag } from '../../components/Tag'
 
+
 export function Details() {
   return (
 		<Container>
@@ -44,7 +45,7 @@ export function Details() {
 						<Tag title="NodeJS" />
 					</Section>
 
-					<Button title="Voltar" loading={false} />
+					<Button title="Voltar" loading={false} to="/" />
 				</Content>
 			</main>
 		</Container>
