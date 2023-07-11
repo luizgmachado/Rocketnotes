@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
 import { useNavigate } from "react-router-dom";
 
 import { Header } from "../../components/Header";
@@ -9,6 +7,7 @@ import { Textarea } from "../../components/Textarea";
 import { NoteItem } from "../../components/NoteItem";
 import { Section } from "../../components/Section";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 import { Container, Form } from "./styles";
 
@@ -25,6 +24,10 @@ export function New() {
 
 	const navigate = useNavigate();
 	
+	function handleBack() {
+		navigate(-1)
+	}
+
 	function handleAddLink() {
 		setLinks(prevState => [...prevState, newLink]);
 		setNewLink("");
@@ -44,6 +47,8 @@ export function New() {
 	function handleRemoveTag(deleted) {
 		setTags((prevState) => prevState.filter((tag) => tag !== deleted))
 	}
+
+	
 
 	async function handleNewNote() {
 		if (!title || !tags || !links) {
@@ -65,7 +70,7 @@ export function New() {
 		})
 
 		alert("Nota criada com sucesso!")
-		navigate("/")
+		navigate(-1)
 	}
   return (
 		<Container>
@@ -75,16 +80,16 @@ export function New() {
 				<Form>
 					<header>
 						<h1>Criar nota</h1>
-						<Link to="/">Voltar</Link>
+						<ButtonText title="Voltar" onClick={handleBack} />
 					</header>
 
 					<Input
 						placeholder="Título"
-						onChange={e => setTitle(e.target.value)}
+						onChange={(e) => setTitle(e.target.value)}
 					/>
 					<Textarea
 						placeholder="Observação"
-						onChange={e => setDescription(e.target.value)}
+						onChange={(e) => setDescription(e.target.value)}
 					/>
 
 					<Section title="Links úteis">
@@ -93,6 +98,7 @@ export function New() {
 								key={String(index)}
 								value={link}
 								onClick={() => handleRemoveLink(index)}
+								// Abaixo é o mesmo código de remover o link direto no componente e de uma forma diferente
 								//onClick={() => setLinks(links.filter((item) => item !== link))}
 							/>
 						))}
@@ -125,9 +131,7 @@ export function New() {
 						</div>
 					</Section>
 
-					<Button 
-					 title="Salvar" 
-					 onClick={handleNewNote} />
+					<Button title="Salvar" onClick={handleNewNote} />
 				</Form>
 			</main>
 		</Container>

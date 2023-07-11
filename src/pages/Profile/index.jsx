@@ -7,11 +7,11 @@ import {
 	FiUnlock,
 	FiCamera,
 } from "react-icons/fi"
+import { useNavigate } from "react-router-dom"
 
 import { api } from "../../services/api"
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 import { useAuth } from "../../hooks/auth"
-import { Link } from "react-router-dom"
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 
@@ -24,10 +24,16 @@ export function Profile() {
 	const [passwordOld, setPasswordOld] = useState()
 	const [passwordNew, setPasswordNew] = useState()
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
-	const [avatar, setAvatar] = useState(avatarUrl)
-  const [avatarFile, setAvatarFile] = useState(null)
+	const navigate = useNavigate()
 
+	const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+	
+	const [avatar, setAvatar] = useState(avatarUrl)
+	const [avatarFile, setAvatarFile] = useState(null)
+
+function handleBack() {
+	navigate(-1)
+}
 
 	async function handleUpdateProfile() {
 		const user = {
@@ -39,27 +45,25 @@ export function Profile() {
 		await UpdateProfile({ user, avatarFile })
 	}
 
-  function handleChangeAvatar(e) {
-    const file = e.target.files[0]
-    setAvatarFile(file)
+	function handleChangeAvatar(e) {
+		const file = e.target.files[0]
+		setAvatarFile(file)
 
-    const imagePreview = URL.createObjectURL(file)
-    setAvatar(imagePreview)
-  }
+		const imagePreview = URL.createObjectURL(file)
+		setAvatar(imagePreview)
+	}
 
 	return (
 		<Container>
 			<header>
-				<Link to="/">
+				<button type="button" onClick={handleBack}>
 					<FiArrowLeft />
-				</Link>
+				</button>
 			</header>
 
 			<Form>
 				<Avatar>
-					<img 
-            src={avatar} 
-            alt={user.name} />
+					<img src={avatar} alt={user.name} />
 
 					<label htmlFor="avatar">
 						<FiCamera />
