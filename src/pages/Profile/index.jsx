@@ -36,13 +36,16 @@ function handleBack() {
 }
 
 	async function handleUpdateProfile() {
-		const user = {
+		const updated = {
 			name,
 			email,
 			password: passwordNew,
 			old_password: passwordOld,
 		}
-		await UpdateProfile({ user, avatarFile })
+
+		const userUpdated = Object.assign(user, updated)
+
+		await UpdateProfile({ user: userUpdated, avatarFile })
 	}
 
 	function handleChangeAvatar(e) {
