@@ -63,6 +63,18 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - React Router;
 - Axios.
 
+Conceitos em prática que aprendi com esse projeto.
+Autenticação;
+JWT;
+Middlewares;
+Upload de imagens;
+API Restful;
+Cors;
+Axios;
+Contextos;
+Hooks;
+LocalStorage;
+
 <h2 id="usage">💡 Utilização</h2>
 
 A aplicação RocketNotes está disponível para utilização [aqui](https://rocket-notes-app.netlify.app/).
