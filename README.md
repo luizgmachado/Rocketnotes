@@ -1,4 +1,3 @@
-
 <h1 align="center"> RocketNotes </h1>
 
 <p align="center">
