@@ -1,4 +1,3 @@
-
 <h1 align="center"> RocketNotes </h1>
 
 <p align="center">
@@ -58,6 +57,18 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - React Icons;
 - React Router;
 - Axios.
+
+Conceitos em prática que aprendi com esse projeto.
+Autenticação;
+JWT;
+Middlewares;
+Upload de imagens;
+API Restful;
+Cors;
+Axios;
+Contextos;
+Hooks;
+LocalStorage;
 
 <h2 id="usage">💡 Utilização</h2>
 
