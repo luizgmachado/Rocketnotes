@@ -15,20 +15,22 @@ export const Container = styled.div`
     outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
   }
 
-  > input {
-    height: 56px;
-    width: 100%;
-
-    padding: 12px;
-
-    color: ${({ theme }) => theme.COLORS.WHITE};
-    background: transparent;
-    border: 0;
-    border-style: none;
-
+  > label {
+    display: flex;
+    align-items: center;
     
+    input {
+      height: 56px;
+      width: 100%;
 
-    &::placeholder {
+      padding: 12px;
+      border-style: none;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      background: transparent;
+      outline: none;
+      
+
+      &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
       font-family: Roboto, sans-serif;
       font-weight: 400;
@@ -37,10 +39,10 @@ export const Container = styled.div`
     }
 
     border-style: none;
+    }
   }
    
-
-  > svg {
+  > label svg {
       margin-left: 16px;
     }
 `

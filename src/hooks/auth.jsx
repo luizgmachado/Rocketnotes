@@ -1,4 +1,5 @@
-/** @format */
+
+import { toast } from "react-toastify"
 
 import { createContext, useContext, useState, useEffect } from "react"
 import { api } from "../services/api"
@@ -14,15 +15,14 @@ function AuthProvider({ children }) {
 			localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
 			localStorage.setItem("@rocketnotes:token", token)
 
-			api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+			api.defaults.headers.common["Authorization"] = `Bearer ${token}`
 
 			setData({ token, user })
-
 		} catch (error) {
 			if (error.response) {
-				alert(error.response.data.message)
+				toast.error(error.response.data.message)
 			} else {
-				alert("Não foi possível entrar.")
+				toast.error("Não foi possível entrar.")
 			}
 		}
 	}
@@ -34,9 +34,8 @@ function AuthProvider({ children }) {
 		setData({})
 	}
 
-	async function UpdateProfile ({ user, avatarFile }) {
+	async function UpdateProfile({ user, avatarFile }) {
 		try {
-
 			if (avatarFile) {
 				const fileUploadForm = new FormData()
 				fileUploadForm.append("avatar", avatarFile)
@@ -50,18 +49,17 @@ function AuthProvider({ children }) {
 
 			setData({
 				token: data.token,
-				user
+				user,
 			})
-			alert("Perfil atualizado com sucesso, você brilhou!")
-
+			toast.success("Perfil atualizado com sucesso, você brilhou!")
 		} catch (error) {
 			if (error.response) {
-				alert(error.response.data.message)
+				toast.error(error.response.data.message)
 			} else {
-				alert("Não foi possível atualizar o perfil.")
+				toast.error("Não foi possível atualizar o perfil.")
 			}
+		}
 	}
-}
 
 	useEffect(() => {
 		const user = localStorage.getItem("@rocketnotes:user")

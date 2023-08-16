@@ -12,6 +12,7 @@ import { ButtonText } from "../../components/ButtonText";
 import { Container, Form } from "./styles";
 
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 export function New() {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
@@ -52,15 +53,15 @@ export function New() {
 
 	async function handleNewNote() {
 		if (!title || !tags || !links) {
-			return alert("Preencha o todos os campos!")
+			return toast.error("Preencha o todos os campos!")
 		}
 
 		if (newLink){
-			return alert("Exite um campo de link preenchido sem adicionar, deseja adicionar mais um link?")
+			return toast.warn("Exite um campo de link preenchido sem adicionar, deseja adicionar mais um link?")
 		}
 		
 		if (newTags){
-			return alert("Exite um campo de Tag preenchido sem adicionar, deseja adicionar mais um tag?")
+			return toast.warn("Exite um campo de Tag preenchido sem adicionar, deseja adicionar mais um tag?")
 		}
 		await api.post("/notes", {
 			title,
@@ -69,7 +70,7 @@ export function New() {
 			links
 		})
 
-		alert("Nota criada com sucesso!")
+		toast.success("Nota criada com sucesso!")
 		navigate(-1)
 	}
   return (

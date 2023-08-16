@@ -2,6 +2,8 @@ import { useState } from "react"
 import { FiMail, FiLock, FiUserPlus } from "react-icons/fi"
 import { Link, useNavigate} from "react-router-dom"
 
+import { toast } from "react-toastify"
+
 import { api } from "../../services/api"
 
 import { Input } from "../../components/Input"
@@ -17,7 +19,7 @@ export function SignUp() {
 
 	function handleSignUp() {
 		if(!name || !email || !password) {
-			return alert("Preencha todos os campos")
+			return toast.error("Preencha todos os campos")
 		}
 		
 		api.post("/users", {
@@ -25,13 +27,13 @@ export function SignUp() {
 			email,
 			password
 		}).then(() => {
-			alert("Conta criada com sucesso")
+			toast.success("Conta criada com sucesso")
 			navigate("/")
 		}).catch(error => {
 			if(error.response) {
-				alert(error.response.data.message)
+				toast.error(error.response.data.message)
 			} else {
-				alert("Erro no cadastro")
+				toast.error("Erro no cadastro")
 			}
 		})
 	}

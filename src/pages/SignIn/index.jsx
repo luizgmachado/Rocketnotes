@@ -28,23 +28,24 @@ export function SignIn() {
 
 				<h2>Faça seu login</h2>
 
-				<Input 
-					placeholder="E-mail" 
-					type="text" 
-					icon={FiMail} 
-					onChange={e => setEmail(e.target.value)} />
-				<Input 
-				  placeholder="Senha" 
-				  type="password" icon={FiLock} 
-					onChange={e => setPassword(e.target.value)} />
+				<Input
+					placeholder="E-mail"
+					type="text"
+					icon={FiMail}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+				<Input
+					placeholder="Senha"
+					type="password"
+					icon={FiLock}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
 
-				<Button title="Entrar" onClick={handleSignIn} />
-				
-				<Link to="/register">
-					Criar Conta
-				</Link>
+				<Button title="Entrar" onClick={handleSignIn} keyPress={handleSignIn} />
+
+				<Link to="/register">Criar Conta</Link>
 			</Form>
-			<Background/>
+			<Background />
 		</Container>
 	)
 }
