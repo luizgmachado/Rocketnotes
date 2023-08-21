@@ -13,6 +13,10 @@ export const Container = styled.div`
   border-radius: 10px;
   padding-right: 16px;
 
+    &:has(input:focus-visible) {
+    outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
+  }
+
   > button {
     border: none;
     background: none;
@@ -25,19 +29,23 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
 
+ 
   > input {
     height: 56px;
     width: 100%;
+    
     padding: 12px;
-
+    border-style: none;
     color: ${({ theme }) => theme.COLORS.WHITE};
     background: transparent;
 
-    border: none;
+    outline: none;
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
   }
+
+  
 `
   

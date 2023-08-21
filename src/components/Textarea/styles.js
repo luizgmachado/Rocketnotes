@@ -15,7 +15,9 @@ export const Container = styled.textarea`
   margin-bottom: 8px;
   border-radius: 10px;
 
-  
+    &:has(Textarea:focus-visible) {
+    outline: 1px solid ${({ theme }) => theme.COLORS.ORANGE};
+  }
 
 
   &::placeholder {
@@ -26,6 +28,8 @@ export const Container = styled.textarea`
     font-family: Roboto, sans-serif;
     
   }
+
+  
 
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
