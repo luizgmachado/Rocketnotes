@@ -1,6 +1,6 @@
 import axios from "axios"
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'https://rocketnotesapi-4p3f.onrender.com',
 
 })
