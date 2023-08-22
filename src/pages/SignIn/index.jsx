@@ -19,6 +19,11 @@ export function SignIn() {
 		signIn({ email, password})
 		
 	}
+	  function handleKeyPress(event) {
+			if (event.key === "Enter") {
+				handleSignIn()
+			}
+		}
 
   return (
 		<Container>
@@ -39,9 +44,10 @@ export function SignIn() {
 					type="password"
 					icon={FiLock}
 					onChange={(e) => setPassword(e.target.value)}
+					onKeyPress={handleKeyPress}
 				/>
 
-				<Button title="Entrar" onClick={handleSignIn} keyPress={handleSignIn} />
+				<Button title="Entrar" onClick={handleSignIn} />
 
 				<Link to="/register">Criar Conta</Link>
 			</Form>
