@@ -16,7 +16,7 @@
 <h2 id="project">📁 Projeto</h2>
 
 Figma do projeto disponível no 🔗[Figma](https://www.figma.com/file/5zvhw9c3DnsEskg1UfotB3/RocketNotes-(Copy)?type=design&node-id=0-1&t=U6ScGbWJglk3oXdW-0)
-A aplicação RocketNotes está disponível para utilização [aqui](https://rocket-notes-app.netlify.app/).
+A aplicação RocketNotes está disponível para utilização [aqui](https://rocketnotes-lg.netlify.app/).
 
 ![Capa](https://github.com/luizgmachado/Rocketnotes/assets/108701750/f5daff1a-ebba-4835-a3c0-f1fdee13ce45)
 
@@ -72,7 +72,7 @@ LocalStorage;
 
 <h2 id="usage">💡 Utilização</h2>
 
-A aplicação RocketNotes está disponível para utilização [aqui](https://rocket-notes-app.netlify.app/).
+A aplicação RocketNotes está disponível para utilização [aqui](https://rocketnotes-lg.netlify.app/).
 
 Você também pode instalá-la em sua máquina localmente. Para isso, clone o projeto, acesse a pasta, instale as dependências e inicie o servidor.
 
